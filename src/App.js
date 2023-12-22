@@ -25,7 +25,7 @@ function App() {
         </div>
         <div className={styles.mainright} style={flag ? {width: `calc(100vw - 250px)`} : {width: `calc(100vw - 50px)`}}>
           <TextArea />
-          <Output run={run} />
+          <Output run={run} setRun={setRun} />
         </div>
       </main>
     </div>

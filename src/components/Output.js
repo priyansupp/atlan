@@ -8,6 +8,8 @@ function Output(props) {
     const refTop = useRef(null);
 
     useEffect(() => {
+        if(props.run === 0) return;         // refs would be null
+        
         const resizeableEle = ref.current;
         const sty1 = window.getComputedStyle(resizeableEle);
         let height = parseInt(sty1.height, 10);
@@ -43,12 +45,21 @@ function Output(props) {
         };
     }, []);
 
+
     return (
-        <div className={styles.output} ref={ref}>
-            <div className={styles.resizer} ref={refTop}/>
-            <CSV run={props.run} />
-        </div>
+        <>
+            {props.run > 0 && (
+                <div className={styles.output} ref={ref}>
+                    <div className={styles.closeButton} onClick={() => props.setRun(0)}>
+                    <span>X</span>
+                    </div>
+                    <div className={styles.resizer} ref={refTop} />
+                    <CSV run={props.run} />
+                </div>
+            )}
+        </>
     );
+
 }
 
 

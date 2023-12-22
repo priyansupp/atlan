@@ -7,8 +7,8 @@ function Nav(props) {
     
     return (
         <div className={styles.navleft}>
-            <div onClick={props.handleClick} style={{color: "red"}}>
-                Connect to Client
+            <div onClick={props.handleClick} className={styles.click}>
+                {props.flag ?  'Connect to Client' : <image></image>}
             </div>
             {
                 props.flag ?

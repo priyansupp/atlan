@@ -35,7 +35,7 @@ function CSV(props) {
 
     return (
         <div>
-            { props.run > 0 ? <CSVDataTable data={csvData} /> : <></> }
+            <CSVDataTable data={csvData} />
         </div>
     );
 }

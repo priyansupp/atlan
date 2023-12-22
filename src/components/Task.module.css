@@ -4,8 +4,11 @@
     /* background-color: orange; */
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-between;
+    align-items:center;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    font-size: small;
 }
 
 .taskleft {
@@ -27,7 +30,7 @@
     width: 60px;
     height: 100%;
     text-align: center;
-    border: 1px;
+    border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -42,4 +45,41 @@
     transform: translate(0, -50%);
 } */
 
+.taskOption {
+    position: relative;
+    cursor: pointer;
+}
 
+.dropdownContent {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    z-index: 7;
+}
+
+.dropdownContent > div:hover {
+    background-color: orange;
+    /* border: 1px black; */
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; /* Make sure it's on top of other elements */
+}
+
+.modalContent {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}

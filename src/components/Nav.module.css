@@ -1,6 +1,13 @@
 .navleft {
-    height: 90%;
-    width: 50%;
-    /* background-color: grey; */
+    height: 50%;
+    width: 100%;
+    background-color: grey;
     /* display: inline; */
 }
+
+.click {
+    height: 40px;
+    background-color: red;
+    cursor: pointer;
+}
+
