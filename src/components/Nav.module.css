@@ -1,13 +1,14 @@
 .navleft {
     height: 50%;
     width: 100%;
-    background-color: grey;
     /* display: inline; */
 }
 
 .click {
     height: 40px;
-    background-color: red;
+    background-color:rgb(255, 202, 176);
     cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
 }
 
