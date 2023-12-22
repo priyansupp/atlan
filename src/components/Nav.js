@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './Nav.module.css';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
+import { MenuFoldOutlined } from '@ant-design/icons';
 
 
 function Nav(props) {
@@ -8,7 +9,17 @@ function Nav(props) {
     return (
         <div className={styles.navleft}>
             <div onClick={props.handleClick} className={styles.click}>
-                {props.flag ?  'Connect to Client' : <image></image>}
+                {/* {props.flag ?  'Connect to Client' : <image></image>} */}
+                {props.flag ? (
+                    <>
+                    <div className={styles.centeredContent}>
+                    <span style={{ display: 'flex', alignItems: 'center' }}>
+                            Connect to Client
+                            <MenuFoldOutlined style={{ marginLeft: '120px' }} />
+                        </span>
+                    </div>
+                </>
+            ) : <></>}
             </div>
             {
                 props.flag ?

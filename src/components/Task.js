@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from './Task.module.css';
+import { SettingFilled } from '@ant-design/icons';
 
 function Task(props) {
     const [isFileDropdownOpen, setFileDropdownOpen] = useState(false);
@@ -52,7 +53,7 @@ function Task(props) {
             </div>
             <div className={styles.taskright}>
                 <div className={styles.taskOption}>Sign in</div>
-                <div className={styles.taskOption}>Settings</div>
+                <SettingFilled style={{ fontSize: '20px', paddingTop: "4px"}}/>
             </div>
             
              {/* Import Modal */}
