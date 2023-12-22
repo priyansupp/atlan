@@ -1,0 +1,45 @@
+.taskflex {
+    height: 100%;
+    width: 100%;
+    /* background-color: orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.taskleft {
+    height: 60%;
+    width: auto;
+    /* background-color: blue; */
+}
+
+.taskright {
+    height: 60%;
+    width: auto;
+    /* background-color: green; */
+}
+
+.taskleft > div, .taskright > div {
+    display: inline-block;
+    background-color: white;
+    margin-right: 10px;
+    width: 60px;
+    height: 100%;
+    text-align: center;
+    border: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.taskleft > div:hover, .taskright > div:hover {
+    background-color: orange;
+}
+
+/* .taskleft > div > p {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+} */
+
+
