@@ -60,6 +60,10 @@
     z-index: 7;
 }
 
+.dropdownContent > div {
+    border: 1px black;
+}
+
 .dropdownContent > div:hover {
     background-color: orange;
     /* border: 1px black; */

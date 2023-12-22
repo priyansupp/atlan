@@ -3,17 +3,26 @@ import styles from './Task.module.css';
 
 function Task(props) {
     const [isFileDropdownOpen, setFileDropdownOpen] = useState(false);
+    const [isRunDropdownOpen, setRunDropdownOpen] = useState(false);
     const [isExportDropdownOpen, setExportDropdownOpen] = useState(false);
     const [isImportModalOpen, setImportModalOpen] = useState(false);
 
     const toggleFileDropdown = () => {
         setFileDropdownOpen(!isFileDropdownOpen);
         setExportDropdownOpen(false);
+        setRunDropdownOpen(false);
     };
-
+    
+    const toggleRunDropdown = () => {
+        setRunDropdownOpen(!isRunDropdownOpen);
+        setExportDropdownOpen(false);
+        setFileDropdownOpen(false);
+    };
+    
     const toggleExportDropdown = () => {
         setExportDropdownOpen(!isExportDropdownOpen);
         setFileDropdownOpen(false);
+        setRunDropdownOpen(false);
     };
 
     const toggleImportModal = () => {
@@ -35,7 +44,16 @@ function Task(props) {
                     )}
                 </div>
                 <div className={styles.taskOption}>Database</div>
-                <div className={styles.taskOption} onClick={() => props.setRun((prev) => prev + 1)}>Run</div>
+                <div className={styles.taskOption} onClick={toggleRunDropdown}>
+                    Run
+                    {isRunDropdownOpen && (
+                        <div className={styles.dropdownContent}>
+                            <div onClick={() => props.setRun(1)}>Small Query</div>
+                            <div onClick={() => props.setRun(2)}>Medium Query</div>
+                            <div onClick={() => props.setRun(3)}>Large Query</div>
+                        </div>
+                    )}
+                </div>
                 <div className={styles.taskOption} onClick={toggleExportDropdown}>
                     Export
                     {isExportDropdownOpen && (
@@ -48,7 +66,7 @@ function Task(props) {
                 </div>
                 <div className={styles.taskOption} onClick={toggleImportModal}>
                     Import
-                        </div>
+                </div>
             </div>
             <div className={styles.taskright}>
                 <div className={styles.taskOption}>Sign in</div>

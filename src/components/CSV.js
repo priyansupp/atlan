@@ -1,21 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useDeferredValue, Suspense } from "react";
 import CSVDataTable from './CSVDataTable.js';
 import Papa from 'papaparse';
 import axios from "axios";
-
+import styles from './CSV.module.css';
 
 function CSV(props) {
-    console.log(props.run);
+    // console.log(props.run);
     const [csvData, setCsvData] = useState([]);
+    const deferredQuery = useDeferredValue(csvData);
+
+
+    useEffect(() => {
+        
+    }, [props.download]);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 let response;
-                if(props.run % 2 === 0) {
-                    response = await axios.get('/data/hello.csv');
-                } else {
+                if(props.run === 1) {
                     response = await axios.get('/data/addresses.csv');
+                } else if(props.run == 2) {
+                    response = await axios.get('/data/medium.csv');
+                } else {
+                    response = await axios.get('/data/large.csv');
                 }
       
                 // Parse CSV data
@@ -23,7 +31,8 @@ function CSV(props) {
                     header: true,
                     dynamicTyping: true,
                     complete: (result) => {
-                    setCsvData(result.data);
+                        setCsvData(result.data);
+                        console.log(result.data);
                     },
                 });
             } catch (error) {
@@ -35,7 +44,9 @@ function CSV(props) {
 
     return (
         <div>
-            <CSVDataTable data={csvData} />
+            <Suspense fallback={<div className={styles.loadstyle}>Loading...</div>}>
+                <CSVDataTable data={deferredQuery} />
+            </Suspense>
         </div>
     );
 }
