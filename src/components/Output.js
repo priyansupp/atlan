@@ -1,8 +1,9 @@
 import React from "react";
 import styles from './Output.module.css';
-import { useRef, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 function Output() {
+    const [isVisible, setIsVisible] = useState(true);
     const ref = useRef(null);
     const refTop = useRef(null);
 
@@ -42,12 +43,29 @@ function Output() {
         };
     }, []);
 
+    const handleCloseClick = () => {
+        setIsVisible(false);
+    };
+
+    // return (
+    //     <div className={styles.output} ref={ref}>
+    //         <div className={styles.resizer} ref={refTop}/>
+    //         {/* jhel */}
+    //     </div>
+    // );
     return (
-        <div className={styles.output} ref={ref}>
-            <div className={styles.resizer} ref={refTop}/>
-            {/* jhel */}
-        </div>
+        <>
+            {isVisible && (
+                <div className={styles.output} ref={ref}>
+                    <div className={styles.closeButton} onClick={handleCloseClick}>
+                    <span style={{ fontSize: '10px', fontWeight: 'bold', color: 'black', border: '2px solid black', padding: '4px', position: 'absolute', top: '8px', right: '8px' }}>X</span>
+                    </div>
+                    <div className={styles.resizer} ref={refTop} />
+                </div>
+            )}
+        </>
     );
+
 }
 
 
