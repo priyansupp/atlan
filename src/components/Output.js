@@ -1,8 +1,9 @@
 import React from "react";
 import styles from './Output.module.css';
 import { useRef, useEffect } from "react";
+import CSV from './CSV.js';
 
-function Output() {
+function Output(props) {
     const ref = useRef(null);
     const refTop = useRef(null);
 
@@ -45,7 +46,7 @@ function Output() {
     return (
         <div className={styles.output} ref={ref}>
             <div className={styles.resizer} ref={refTop}/>
-            {/* jhel */}
+            <CSV run={props.run} />
         </div>
     );
 }

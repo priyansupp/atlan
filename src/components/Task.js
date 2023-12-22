@@ -1,13 +1,13 @@
 import React from "react";
 import styles from './Task.module.css';
 
-function Task() {
+function Task(props) {
     return (
         <div className={styles.taskflex}>
             <div className={styles.taskleft}>
                 <div>File</div>
                 <div>Database</div>
-                <div>Run</div>
+                <div onClick={() => props.setRun((prev) => prev + 1)}>Run</div>
                 <div>Export</div>
                 <div>Import</div>
             </div>
