@@ -3,7 +3,7 @@ import styles from './Task.module.css';
 import { SettingFilled } from '@ant-design/icons';
 import { CSVLink } from "react-csv";
 import { jsPDF } from "jspdf";
-import * as FileSaver from 'file-saver';
+import FileSaver from 'file-saver';
 import XLSX from 'sheetjs-style';
 
 function Task(props) {
@@ -51,6 +51,7 @@ function Task(props) {
     }
 
     const handleFileSaveAs = () => {
+        console.log(props.query);
         const file = new File([props.query], "query.sql", {type: "text/plain;charset=utf-8"});
         FileSaver.saveAs(file);
     }

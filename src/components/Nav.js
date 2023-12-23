@@ -1,8 +1,7 @@
 import React from "react";
 import styles from './Nav.module.css';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import { MenuFoldOutlined } from '@ant-design/icons';
-
+import logo from '../logo.png';
 
 function Nav(props) {
     
@@ -12,13 +11,11 @@ function Nav(props) {
                 {
                     props.flag ?
                     <div className={styles.centeredContent}>
-                        <span style={{ display: 'flex', alignItems: 'center' }}>
-                            Connect to Client
-                            <MenuFoldOutlined style={{ marginLeft: '120px' }} />
-                        </span>
+                        <span>Connect to client</span>
+                        <img src={logo} style={{ width: 50, height: 40}} />
                     </div>
                     : 
-                    <MenuFoldOutlined style={{ marginLeft: '10px'}} />
+                    <img src={logo} style={{ width: 50, height: 40}} />
                 }
             </div>
             {

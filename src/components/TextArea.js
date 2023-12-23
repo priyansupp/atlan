@@ -25,7 +25,7 @@ var formats = [
 
 function TextArea(props) {
     const handleProcedureContentChange = (content) => {
-        // console.log("content---->", content);
+        props.setQuery(content);
     };
     return (
         <div className={styles.outerpad}>

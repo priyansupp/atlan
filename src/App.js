@@ -26,7 +26,7 @@ function App() {
           <Nav handleClick={handleClick} flag={flag}/>
         </div>
         <div className={styles.mainright} style={flag ? {width: `calc(100vw - 250px)`} : {width: `calc(100vw - 50px)`}}>
-          <TextArea query={query} />
+          <TextArea query={query} setQuery={setQuery} />
           <Output run={run} setRun={setRun} csvData={csvData} setCsvData={setCsvData} />
         </div>
       </main>
