@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/atlan/static/css/main.8520e826.css",
-    "main.js": "/atlan/static/js/main.42321eb5.js",
+    "main.js": "/atlan/static/js/main.797f441f.js",
     "static/js/498.ad07b1f9.chunk.js": "/atlan/static/js/498.ad07b1f9.chunk.js",
     "static/js/703.44a3b2a1.chunk.js": "/atlan/static/js/703.44a3b2a1.chunk.js",
     "static/js/198.4295fdd0.chunk.js": "/atlan/static/js/198.4295fdd0.chunk.js",
     "static/media/logo.png": "/atlan/static/media/logo.814e8a69d3e81ffe2530.png",
     "index.html": "/atlan/index.html",
-    "static/media/addresses.csv": "/atlan/static/media/addresses.061dc3863d0f0f26f093.csv",
     "main.8520e826.css.map": "/atlan/static/css/main.8520e826.css.map",
-    "main.42321eb5.js.map": "/atlan/static/js/main.42321eb5.js.map",
+    "main.797f441f.js.map": "/atlan/static/js/main.797f441f.js.map",
     "498.ad07b1f9.chunk.js.map": "/atlan/static/js/498.ad07b1f9.chunk.js.map",
     "703.44a3b2a1.chunk.js.map": "/atlan/static/js/703.44a3b2a1.chunk.js.map",
     "198.4295fdd0.chunk.js.map": "/atlan/static/js/198.4295fdd0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8520e826.css",
-    "static/js/main.42321eb5.js"
+    "static/js/main.797f441f.js"
   ]
 }
