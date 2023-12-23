@@ -33,18 +33,12 @@
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-    justify-content: space-evenly;
 }
 
 .taskleft > div:hover, .taskright > div:hover {
     background-color: orange;
 }
 
-/* .taskleft > div > p {
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-} */
 
 .taskOption {
     position: relative;

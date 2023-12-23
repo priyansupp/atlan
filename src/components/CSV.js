@@ -4,15 +4,9 @@ import Papa from 'papaparse';
 import axios from "axios";
 import styles from './CSV.module.css';
 
+
 function CSV(props) {
-    // console.log(props.run);
-    const [csvData, setCsvData] = useState([]);
-    const deferredQuery = useDeferredValue(csvData);
-
-
-    useEffect(() => {
-        
-    }, [props.download]);
+    const deferredQuery = useDeferredValue(props.csvData);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,8 +25,8 @@ function CSV(props) {
                     header: true,
                     dynamicTyping: true,
                     complete: (result) => {
-                        setCsvData(result.data);
-                        console.log(result.data);
+                        props.setCsvData(result.data);
+                        // console.log(result.data);
                     },
                 });
             } catch (error) {

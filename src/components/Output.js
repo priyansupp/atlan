@@ -54,7 +54,7 @@ function Output(props) {
                     <span>X</span>
                     </div>
                     <div className={styles.resizer} ref={refTop} />
-                    <CSV run={props.run} />
+                    <CSV run={props.run} csvData={props.csvData} setCsvData={props.setCsvData} />
                 </div>
             )}
         </>

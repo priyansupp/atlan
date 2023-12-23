@@ -9,17 +9,17 @@ function Nav(props) {
     return (
         <div className={styles.navleft}>
             <div onClick={props.handleClick} className={styles.click}>
-                {/* {props.flag ?  'Connect to Client' : <image></image>} */}
-                {props.flag ? (
-                    <>
+                {
+                    props.flag ?
                     <div className={styles.centeredContent}>
-                    <span style={{ display: 'flex', alignItems: 'center' }}>
+                        <span style={{ display: 'flex', alignItems: 'center' }}>
                             Connect to Client
                             <MenuFoldOutlined style={{ marginLeft: '120px' }} />
                         </span>
                     </div>
-                </>
-            ) : <></>}
+                    : 
+                    <MenuFoldOutlined style={{ marginLeft: '10px'}} />
+                }
             </div>
             {
                 props.flag ?

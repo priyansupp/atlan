@@ -23,9 +23,9 @@ var formats = [
     "link", "image", "align", "size",
 ];
 
-function TextArea() {
+function TextArea(props) {
     const handleProcedureContentChange = (content) => {
-        console.log("content---->", content);
+        // console.log("content---->", content);
     };
     return (
         <div className={styles.outerpad}>
@@ -41,6 +41,7 @@ function TextArea() {
                     modules={modules}
                     formats={formats}
                     placeholder="Write your Query..."
+                    value={props.query}
                     onChange={handleProcedureContentChange}
                     style={{ height: "250px", backgroundColor: "white" }}
                     >
