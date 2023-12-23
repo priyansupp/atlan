@@ -12,13 +12,13 @@ Clone the repo and run the following:
 ### `npm start`
 
 # I have used the following packages:
-axios -> for requests
-file-saver -> to save files
-jspdf -> to export as pdf
-sheetjs-style -> for handling excel file
-papaparse -> to parse csv
-react-pro-sidebar -> for sidebar display
-react-quill -> for text editor
+1. axios -> for requests
+2. file-saver -> to save files
+3. jspdf -> to export as pdf
+4. sheetjs-style -> for handling excel file
+5. papaparse -> to parse csv
+6. react-pro-sidebar -> for sidebar display
+7. react-quill -> for text editor
 
 # We have attached three example queries in "Run" bar:
 1. Small query -> Runs fast
