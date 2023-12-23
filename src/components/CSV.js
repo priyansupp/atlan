@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useDeferredValue, Suspense } from "react";
+import React, { useEffect, useDeferredValue, Suspense } from "react";
 import CSVDataTable from './CSVDataTable.js';
 import Papa from 'papaparse';
 import axios from "axios";
 import styles from './CSV.module.css';
-import f1 from '../data/addresses.csv';
 
 
 function CSV(props) {
@@ -14,11 +13,11 @@ function CSV(props) {
             try {
                 let response;
                 if(props.run === 1) {
-                    response = await axios.get('/addresses.csv');
+                    response = await axios.get(process.env.PUBLIC_URL + '/addresses.csv');
                 } else if(props.run == 2) {
-                    response = await axios.get('/medium.csv');
+                    response = await axios.get(process.env.PUBLIC_URL + '/medium.csv');
                 } else {
-                    response = await axios.get('/large.csv');
+                    response = await axios.get(process.env.PUBLIC_URL + '/large.csv');
                 }
       
                 // Parse CSV data
