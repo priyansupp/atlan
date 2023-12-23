@@ -3,6 +3,7 @@ import CSVDataTable from './CSVDataTable.js';
 import Papa from 'papaparse';
 import axios from "axios";
 import styles from './CSV.module.css';
+import f1 from '../data/addresses.csv';
 
 
 function CSV(props) {
@@ -13,11 +14,11 @@ function CSV(props) {
             try {
                 let response;
                 if(props.run === 1) {
-                    response = await axios.get('/data/addresses.csv');
+                    response = await axios.get('/addresses.csv');
                 } else if(props.run == 2) {
-                    response = await axios.get('/data/medium.csv');
+                    response = await axios.get('/medium.csv');
                 } else {
-                    response = await axios.get('/data/large.csv');
+                    response = await axios.get('/large.csv');
                 }
       
                 // Parse CSV data
@@ -29,6 +30,18 @@ function CSV(props) {
                         // console.log(result.data);
                     },
                 });
+
+                // // Path to your CSV file
+                // const csvFilePath = f1;
+
+                // // Parse CSV file
+                // Papa.parse(csvFilePath, {
+                //     header: true,
+                //     dynamicTyping: true,
+                //     complete: (result) => {
+                //         props.setCsvData(result.data);
+                //     },
+                // });
             } catch (error) {
                 console.error('Error fetching CSV data:', error);
             }
